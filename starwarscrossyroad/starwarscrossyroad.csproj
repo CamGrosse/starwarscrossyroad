@@ -159,5 +159,11 @@
   <ItemGroup>
     <None Include="Resources\379287dc2c9c2dc086e77e5fe1ac24a1-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shotgun-spas_12-RA_The_Sun_God-503834910.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dying Robot-SoundBible.com-1721415199.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -81,6 +81,15 @@ namespace starwarscrossyroad.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Dying_Robot_SoundBible_com_1721415199 {
+            get {
+                return ResourceManager.GetStream("Dying_Robot_SoundBible_com_1721415199", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap playerIcon {
@@ -107,6 +116,15 @@ namespace starwarscrossyroad.Properties {
             get {
                 object obj = ResourceManager.GetObject("R_removebg_preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream shotgun_spas_12_RA_The_Sun_God_503834910 {
+            get {
+                return ResourceManager.GetStream("shotgun_spas_12_RA_The_Sun_God_503834910", resourceCulture);
             }
         }
         

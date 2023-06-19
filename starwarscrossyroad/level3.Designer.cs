@@ -28,14 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(level3));
+            this.gameticktimertick = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // gameticktimertick
+            // 
+            this.gameticktimertick.Enabled = true;
+            this.gameticktimertick.Interval = 17;
+            this.gameticktimertick.Tick += new System.EventHandler(this.gameticktimertick_Tick);
             // 
             // level3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.DoubleBuffered = true;
             this.Name = "level3";
             this.Size = new System.Drawing.Size(1386, 730);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.level3_Paint);
@@ -46,5 +55,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer gameticktimertick;
     }
 }

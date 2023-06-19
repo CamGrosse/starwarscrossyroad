@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
-
+using System.Media;
 namespace starwarscrossyroad
 {
     public partial class GameScreen : UserControl
@@ -17,7 +17,7 @@ namespace starwarscrossyroad
         int lives = 3;
         int car = 75;
         int playerSpeed = 5;
-
+        SoundPlayer death = new SoundPlayer(Properties.Resources.Dying_Robot_SoundBible_com_1721415199);
         List<int> carSpeed = new List<int>();
         List<Rectangle> cars = new List<Rectangle>();
 
@@ -108,7 +108,7 @@ namespace starwarscrossyroad
         {
 
 
-            nextLevelButton.Visible = false;
+           nextLevelButton.Visible = false;
 
 
 
@@ -157,6 +157,7 @@ namespace starwarscrossyroad
             {
                 if (playerRec.IntersectsWith(cars[i]))
                 {
+                    death.Play();
                     cars.RemoveAt(i);
                     carSpeed.RemoveAt(i);
                     lives -= 1;
@@ -192,12 +193,13 @@ namespace starwarscrossyroad
             Form f = this.FindForm();
             f.Controls.Remove(this);
             level2 l2 = new level2();
-            f.Controls.Add((l2));
+            f.Controls.Add(l2);
 
         }
 
         private async void AwaitMove()
         {
+            //makes the player wait so that the tie fighters can spawn in
             int speed = playerSpeed;
             playerSpeed = 0;
             await Task.Delay(3000);

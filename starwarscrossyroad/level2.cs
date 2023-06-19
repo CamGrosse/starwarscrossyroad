@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace starwarscrossyroad
 {
            
     public partial class level2 : UserControl
     {
-
+        SoundPlayer death = new SoundPlayer(Properties.Resources.Dying_Robot_SoundBible_com_1721415199);
         int randValue = 0;
         int car = 75;
         int car2 = 75;
@@ -34,12 +35,14 @@ namespace starwarscrossyroad
         public level2()
         {
             InitializeComponent();
+           
             InitalizeGame();
         }
         public void InitalizeGame()
         {
-            nextLevelButton.Visible = false;
+           
             gameticker.Enabled = true;
+            AwaitMove();
         }
         private void level2_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
@@ -106,8 +109,8 @@ namespace starwarscrossyroad
         
 
         private void gameticker_Tick_1(object sender, EventArgs e)
-        {
-          
+        { 
+            nextLevelButton.Visible = false;
             if (wDown == true && playerRec.Y > 0)
             {
                 playerRec.Y -= playerSpeed;
@@ -136,7 +139,7 @@ namespace starwarscrossyroad
             {
                 playerRec.X += playerSpeed;
             }
-            randValue = randGen.Next(0, 300);
+            randValue = randGen.Next(0, 250);
             if (randValue < 5)
             {
 
@@ -149,10 +152,10 @@ namespace starwarscrossyroad
             }
             for (int i = 0; i < cars.Count(); i++)
             {
-                //find the new postion of y based on speed
+
                 int x = cars[i].X + carSpeed[i];
 
-                //replace the rectangle in the list with updated one using new y
+              
                 cars[i] = new Rectangle(x, cars[i].Y, car, car);
                 if (cars[i].Y < 0)
                 {
@@ -160,7 +163,7 @@ namespace starwarscrossyroad
                     carSpeed.RemoveAt(i);
                 }
             }
-            randValue = randGen.Next(0, 300);
+            randValue = randGen.Next(0, 250);
             if (randValue < 5)
             {
 
@@ -173,10 +176,10 @@ namespace starwarscrossyroad
             }
             for (int i = 0; i < cars2.Count(); i++)
             {
-                //find the new postion of y based on speed
+        
                 int x = cars2[i].X + carSpeed2[i];
 
-                //replace the rectangle in the list with updated one using new y
+                
                 cars2[i] = new Rectangle(x, cars2[i].Y, car2, car2);
                 if (cars2[i].Y < 0)
                 {
@@ -188,6 +191,7 @@ namespace starwarscrossyroad
             {
                 if (playerRec.IntersectsWith(cars[i]))
                 {
+                    death.Play();
                     cars.RemoveAt(i);
                     carSpeed.RemoveAt(i);
                     lives -= 1;
@@ -199,6 +203,7 @@ namespace starwarscrossyroad
             {
                 if (playerRec.IntersectsWith(cars2[i]))
                 {
+                    death.Play();
                     cars2.RemoveAt(i);
                     carSpeed2.RemoveAt(i);
                     lives -= 1;
@@ -226,6 +231,14 @@ namespace starwarscrossyroad
             f.Controls.Remove(this);
             level3 l3 = new level3();
             f.Controls.Add((l3));
+        }
+        private async void AwaitMove()
+        {
+            
+            int speed = playerSpeed;
+            playerSpeed = 0;
+            await Task.Delay(3000);
+            playerSpeed = speed;
         }
     }
 }

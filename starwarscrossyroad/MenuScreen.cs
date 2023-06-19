@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace starwarscrossyroad
 {
     public partial class MenuScreen : UserControl
     {
+        SoundPlayer gun = new SoundPlayer(Properties.Resources.shotgun_spas_12_RA_The_Sun_God_503834910);
         public MenuScreen()
         {
             InitializeComponent();
@@ -19,8 +21,8 @@ namespace starwarscrossyroad
 
         private void startButton_Click(object sender, EventArgs e)
         {
-
-             Form f = this.FindForm();
+            gun.Play();
+            Form f = this.FindForm();
             f.Controls.Remove(this);
             GameScreen gs = new GameScreen();
             f.Controls.Add((gs));
