@@ -11,19 +11,20 @@ using System.Media;
 
 namespace starwarscrossyroad
 {
-    public partial class gameobver : UserControl
+    public partial class gamewin : UserControl
     {
-        SoundPlayer sad = new SoundPlayer(Properties.Resources.sad);
-        public gameobver()
+        SoundPlayer joy = new SoundPlayer(Properties.Resources.joy);
+        public gamewin()
         {
             InitializeComponent();
-            gamewin();
+            happy();
         }
-        public void gamewin()
+        public void happy()
         {
-            sad.Play();
+            joy.Play();
         }
-        private void retrtbutton_Click(object sender, EventArgs e)
+
+        private void menuButton_Click(object sender, EventArgs e)
         {
             Form f = this.FindForm();
             f.Controls.Remove(this);

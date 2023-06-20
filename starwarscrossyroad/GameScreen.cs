@@ -24,6 +24,7 @@ namespace starwarscrossyroad
         Rectangle playerRec = new Rectangle(500, 500, 25, 50);
         Rectangle test = new Rectangle(500, 150, 110, 90);
 
+
         Random randGen = new Random();
 
         bool wDown = false;
@@ -96,6 +97,7 @@ namespace starwarscrossyroad
         {
             e.Graphics.DrawImage(Properties.Resources.R_removebg_preview, test);
             e.Graphics.DrawImage(Properties.Resources.playerIcon, playerRec);
+
             for (int i = 0; i < cars.Count(); i++)
             {
 

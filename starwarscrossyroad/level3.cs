@@ -29,6 +29,7 @@ namespace starwarscrossyroad
         Rectangle playerRec = new Rectangle(500, 650, 25, 50);
         Rectangle exit = new Rectangle(500, -40, 110, 125);
         Rectangle start = new Rectangle(500, 500, 110, 90);
+        Rectangle enter = new Rectangle(500, 650, 25, 50);
         Random randGen = new Random();
         bool wDown = false;
         bool sDown = false;
@@ -92,9 +93,10 @@ namespace starwarscrossyroad
         private void level3_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawImage(Properties.Resources.playerIcon, playerRec);
-         
+            e.Graphics.DrawImage(Properties.Resources._379287dc2c9c2dc086e77e5fe1ac24a1_removebg_preview, enter);
+            e.Graphics.DrawImage(Properties.Resources.Web_capture_20_6_2023_9337_mail_google_com_removebg_preview, exit);
 
-           
+
             for (int i = 0; i < cars.Count(); i++)
             {
 
@@ -260,8 +262,12 @@ namespace starwarscrossyroad
             }
             if (playerRec.IntersectsWith(exit))
             {
-                //nextLevelButton.Visible = true;
+
                 gameticktimertick.Stop();
+                Form f = this.FindForm();
+                f.Controls.Remove(this);
+                gamewin gw= new gamewin();
+                f.Controls.Add((gw));
 
             }
             Refresh();

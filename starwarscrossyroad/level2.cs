@@ -215,6 +215,10 @@ namespace starwarscrossyroad
             if (lives < 1)
             {
                 gameticker.Stop();
+                Form f = this.FindForm();
+                f.Controls.Remove(this);
+                gameobver go = new gameobver();
+                f.Controls.Add((go));
             }
             if (playerRec.IntersectsWith(exit))
             {

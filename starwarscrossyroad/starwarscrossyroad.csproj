@@ -59,6 +59,12 @@
     <Compile Include="gameobver.Designer.cs">
       <DependentUpon>gameobver.cs</DependentUpon>
     </Compile>
+    <Compile Include="gamewin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gamewin.Designer.cs">
+      <DependentUpon>gamewin.cs</DependentUpon>
+    </Compile>
     <Compile Include="level2.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gameobver.resx">
       <DependentUpon>gameobver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gamewin.resx">
+      <DependentUpon>gamewin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="level2.resx">
       <DependentUpon>level2.cs</DependentUpon>
@@ -164,6 +173,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Dying Robot-SoundBible.com-1721415199.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sad-SoundBible.com-759843766.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scream Of Joy-SoundBible.com-1639390065.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Web_capture_20-6-2023_9337_mail.google.com-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

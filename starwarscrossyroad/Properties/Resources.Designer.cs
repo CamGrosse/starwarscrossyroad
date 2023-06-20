@@ -90,6 +90,15 @@ namespace starwarscrossyroad.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream joy {
+            get {
+                return ResourceManager.GetStream("joy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap playerIcon {
@@ -122,6 +131,15 @@ namespace starwarscrossyroad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream sad {
+            get {
+                return ResourceManager.GetStream("sad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream shotgun_spas_12_RA_The_Sun_God_503834910 {
             get {
                 return ResourceManager.GetStream("shotgun_spas_12_RA_The_Sun_God_503834910", resourceCulture);
@@ -134,6 +152,26 @@ namespace starwarscrossyroad.Properties {
         internal static System.Drawing.Bitmap tiefighter__2_ {
             get {
                 object obj = ResourceManager.GetObject("tiefighter__2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unnamed {
+            get {
+                object obj = ResourceManager.GetObject("unnamed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Web_capture_20_6_2023_9337_mail_google_com_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Web_capture_20_6_2023_9337_mail_google_com_removebg_preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
