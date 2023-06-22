@@ -110,7 +110,7 @@ namespace starwarscrossyroad
 
         private void gameticker_Tick_1(object sender, EventArgs e)
         { 
-            nextLevelButton.Visible = false;
+           nextLevelButton.Visible = false;
             if (wDown == true && playerRec.Y > 0)
             {
                 playerRec.Y -= playerSpeed;
@@ -222,20 +222,15 @@ namespace starwarscrossyroad
             }
             if (playerRec.IntersectsWith(exit))
             {
+               
+    gameticker.Enabled = false;
                 nextLevelButton.Visible = true;
-                gameticker.Stop();
 
             }
             Refresh();
         }
 
-        private void nextLevelButton_Click(object sender, EventArgs e)
-        {
-            Form f = this.FindForm();
-            f.Controls.Remove(this);
-            level3 l3 = new level3();
-            f.Controls.Add((l3));
-        }
+   
         private async void AwaitMove()
         {
             
@@ -243,6 +238,17 @@ namespace starwarscrossyroad
             playerSpeed = 0;
             await Task.Delay(3000);
             playerSpeed = speed;
+        }
+
+   
+
+        private void nextLevelButton_Click_1(object sender, EventArgs e)
+        {
+
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+            level3 l3 = new level3();
+            f.Controls.Add((l3));
         }
     }
 }

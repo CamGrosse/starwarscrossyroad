@@ -42,11 +42,11 @@
             // 
             // nextLevelButton
             // 
-            this.nextLevelButton.Location = new System.Drawing.Point(512, 324);
+            this.nextLevelButton.Location = new System.Drawing.Point(609, 235);
             this.nextLevelButton.Name = "nextLevelButton";
-            this.nextLevelButton.Size = new System.Drawing.Size(208, 76);
+            this.nextLevelButton.Size = new System.Drawing.Size(49, 37);
             this.nextLevelButton.TabIndex = 0;
-            this.nextLevelButton.Text = "Next Level";
+            this.nextLevelButton.Text = "Next level";
             this.nextLevelButton.UseVisualStyleBackColor = true;
             this.nextLevelButton.Click += new System.EventHandler(this.nextLevelButton_Click);
             // 
@@ -59,7 +59,6 @@
             this.DoubleBuffered = true;
             this.Name = "GameScreen";
             this.Size = new System.Drawing.Size(1500, 1100);
-         
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.GameScreen_Paint);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GameScreen_KeyUp);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.GameScreen_PreviewKeyDown);

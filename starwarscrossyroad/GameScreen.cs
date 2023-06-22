@@ -108,9 +108,9 @@ namespace starwarscrossyroad
 
         private void gameticktimer_Tick(object sender, EventArgs e)
         {
+            nextLevelButton.Visible = false;
 
-
-           nextLevelButton.Visible = false;
+        
 
 
 
@@ -179,9 +179,8 @@ namespace starwarscrossyroad
 
             if (playerRec.IntersectsWith(test))
             {
+              gameticktimer.Enabled = false;
                 nextLevelButton.Visible = true;
-                gameticktimer.Stop();
-
             }
             Refresh();
         }
@@ -189,15 +188,7 @@ namespace starwarscrossyroad
 
 
 
-        private void nextLevelButton_Click(object sender, EventArgs e)
-        {
-
-            Form f = this.FindForm();
-            f.Controls.Remove(this);
-            level2 l2 = new level2();
-            f.Controls.Add(l2);
-
-        }
+       
 
         private async void AwaitMove()
         {
@@ -206,6 +197,15 @@ namespace starwarscrossyroad
             playerSpeed = 0;
             await Task.Delay(3000);
             playerSpeed = speed;
+        }
+
+        private void nextLevelButton_Click(object sender, EventArgs e)
+        {
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+            level2 l2 = new level2();
+            f.Controls.Add(l2);
+           
         }
     }
 }

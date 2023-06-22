@@ -42,13 +42,13 @@
             // 
             // nextLevelButton
             // 
-            this.nextLevelButton.Location = new System.Drawing.Point(521, 290);
+            this.nextLevelButton.Location = new System.Drawing.Point(684, 337);
             this.nextLevelButton.Name = "nextLevelButton";
-            this.nextLevelButton.Size = new System.Drawing.Size(75, 23);
-            this.nextLevelButton.TabIndex = 0;
-            this.nextLevelButton.Text = "Next Level";
+            this.nextLevelButton.Size = new System.Drawing.Size(49, 37);
+            this.nextLevelButton.TabIndex = 1;
+            this.nextLevelButton.Text = "Next level";
             this.nextLevelButton.UseVisualStyleBackColor = true;
-            this.nextLevelButton.Click += new System.EventHandler(this.nextLevelButton_Click);
+            this.nextLevelButton.Click += new System.EventHandler(this.nextLevelButton_Click_1);
             // 
             // level2
             // 

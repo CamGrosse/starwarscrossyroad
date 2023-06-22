@@ -266,7 +266,7 @@ namespace starwarscrossyroad
                 gameticktimertick.Stop();
                 Form f = this.FindForm();
                 f.Controls.Remove(this);
-                gamewin gw= new gamewin();
+                gamewin gw = new gamewin();
                 f.Controls.Add((gw));
 
             }
@@ -279,5 +279,7 @@ namespace starwarscrossyroad
                 await Task.Delay(3000);
                 playerSpeed = speed;
             }
+
+       
     }
 }
